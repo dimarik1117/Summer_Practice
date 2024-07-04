@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  background: rgb(253, 255, 200) url("./hh.png") no-repeat;
+  background-position: center center;
+  height: 100vh;
+}

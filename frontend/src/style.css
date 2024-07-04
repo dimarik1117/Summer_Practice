@@ -1,0 +1,29 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 900;
+    color: #14522c;
+}
+
+.ant-input {
+    background-color: #a1f5c1;
+    border-color: #14522c;
+}
+
+.ant-input-search-button {
+    background-color: #19ff71;
+    border-color: #14522c;
+}
+
+.ant-input-search-button .ant-btn-icon {
+    color: #14522c;
+}
+
+.ant-card-body p {
+    color: #14522c;
+}
