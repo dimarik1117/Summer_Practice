@@ -1,0 +1,4 @@
+*.env
+*cache*
+script_date.sh
+node_modules
