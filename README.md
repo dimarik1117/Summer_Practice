@@ -36,6 +36,7 @@ poetry run python src/main.py
 ### 1. Установка Node Vite
 
 ```shell
+cd frontend
 nvm install 20
 npm create vite@latest
 cd my-vite-project
