@@ -10,7 +10,7 @@ git clone ..
 
 ## Backend
 
-### 1. Установка
+### 1. Установка Poetry
 
 ```shell
 cd backend
@@ -18,7 +18,14 @@ poetry shell
 poetry install
 ```
 
-### 2. Запуск
+### 2. Установка Alembic
+
+```shell
+poetry run alembic revision --autogenerate -m "Alembic Migration"
+poetry run alembic upgrade head
+```
+
+### 3. Запуск
 
 ```shell
 poetry run python src/main.py
