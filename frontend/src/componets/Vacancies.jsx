@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 
-function VacancyTable({ vacancy, titlePrefix = '' }) {
+function Vacancies({ vacancy, titlePrefix = '' }) {
   const characters = Object.keys(vacancy);
 
   return (
@@ -25,7 +25,7 @@ function VacancyTable({ vacancy, titlePrefix = '' }) {
     >
       {characters.map((key, index) => (
         typeof vacancy[key] === 'object' && vacancy[key] !== null ? (
-          <VacancyTable key={index} vacancy={vacancy[key]} titlePrefix={`${key.charAt(0).toUpperCase() + key.slice(1)} `} />
+          <Vacancies key={index} vacancy={vacancy[key]} titlePrefix={`${key.charAt(0).toUpperCase() + key.slice(1)} `} />
         ) : (
           vacancy[key] && ( <p key={index}><strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {vacancy[key]}</p> )
         )
@@ -34,5 +34,4 @@ function VacancyTable({ vacancy, titlePrefix = '' }) {
   );
 }
 
-export default VacancyTable;
-  
+export default Vacancies;
