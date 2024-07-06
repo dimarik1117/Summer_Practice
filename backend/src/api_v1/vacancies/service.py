@@ -21,7 +21,7 @@ async def vacancy_get_one(params: dict, session):
         for vac in vacancies['items']:
             vacancy = await add_vacancy(session, vac)
             vacancy_arr.append(vacancy)
-        
+   
     else:
         print(f"Ошибка: {response.status_code}, {response.text}")
     
@@ -108,4 +108,4 @@ async def add_vacancy(session, vacancy_data):
 
         vacancy = await crud.create(session= session, model = Vacancy, scheme_in = vacancy)
 
-    return vacancy
+    return await crud.get_one_full(session= session, model=Vacancy, key = vacancy_data['id'])

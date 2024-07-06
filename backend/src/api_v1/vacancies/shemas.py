@@ -4,7 +4,6 @@ import datetime
 
 from errors.validation import ValidationError
 
-
 class QueryParamsBase(BaseModel):
     page: Optional[int] = Field(0, description="Номер страницы.")
     per_page: Optional[int] = Field(10, description="Количество элементов на странице. Максимум 100.")
@@ -19,7 +18,7 @@ class QueryParamsBase(BaseModel):
     industry: Optional[str] = Field(None, description="Индустрия.")
     employer_id: Optional[str] = Field(None, description="Идентификатор работодателя.")
     currency: Optional[str] = Field(None, description="Код валюты.")
-    salary: Optional[float] = Field(None, description="Размер заработной платы.")
+    salary: Optional[int | str] = Field(None, description="Размер заработной платы.")
     label: Optional[str] = Field(None, description="Фильтр по меткам вакансий.")
     only_with_salary: Optional[bool] = Field(False, description="Показывать только вакансии с зарплатой.")
     period: Optional[int] = Field(None, description="Период поиска в днях.")

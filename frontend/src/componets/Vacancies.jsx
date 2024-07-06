@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card } from 'antd';
 
-function Vacancies({ vacancy }) {
+function VacancyTable({ vacancy, titlePrefix = '' }) {
   const characters = Object.keys(vacancy);
 
   return (
     <Card
-      title={`Вакансия №${vacancy.id}`}
+      title={`${titlePrefix}Vacancy ${vacancy.id}`}
       styles={{
         header: {
           backgroundColor: '#19ff71',
@@ -24,10 +24,15 @@ function Vacancies({ vacancy }) {
       }}
     >
       {characters.map((key, index) => (
-        vacancy[key] && ( <p key={index}><strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {vacancy[key]}</p> )
+        typeof vacancy[key] === 'object' && vacancy[key] !== null ? (
+          <VacancyTable key={index} vacancy={vacancy[key]} titlePrefix={`${key.charAt(0).toUpperCase() + key.slice(1)} `} />
+        ) : (
+          vacancy[key] && ( <p key={index}><strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {vacancy[key]}</p> )
+        )
       ))}
     </Card>
   );
 }
 
-export default Vacancies; 
+export default VacancyTable;
+  

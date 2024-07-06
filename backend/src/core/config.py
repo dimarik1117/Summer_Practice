@@ -17,5 +17,4 @@ class Settings(BaseSettings):
     def get_url(self):
         return f'postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}'
 
-settings = Settings(_env_file='db.env', _env_file_encoding='utf-8', db_echo=True)
-print(settings.get_url())
+settings = Settings(_env_file='db.env', _env_file_encoding='utf-8', db_echo=False)
